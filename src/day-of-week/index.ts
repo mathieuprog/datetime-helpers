@@ -10,7 +10,7 @@ interface LocalizedDayOfWeek {
   }
 };
 
-const enumValueDateMap = {
+const enumValueDateMap: Record<number, Date> = {
   [DayOfWeek.Monday]: new Date(Date.UTC(2000, 0, 3)),
   [DayOfWeek.Tuesday]: new Date(Date.UTC(2000, 0, 4)),
   [DayOfWeek.Wednesday]: new Date(Date.UTC(2000, 0, 5)),
@@ -30,7 +30,7 @@ const isoNumberEnumValueMap: Record<number, DayOfWeek> = {
   7: DayOfWeek.Sunday
 };
 
-export function getDaysOfWeek(languageTag: string, first: DayOfWeek = DayOfWeek.Monday): LocalizedDayOfWeek[] {
+export function getDaysOfWeek(languageTag: string, first: DayOfWeek | number = DayOfWeek.Monday): LocalizedDayOfWeek[] {
   const date = enumValueDateMap[first];
 
   return [...Array(7)].map(() => {

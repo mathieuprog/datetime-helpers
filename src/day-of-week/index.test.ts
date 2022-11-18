@@ -32,4 +32,14 @@ test('getDaysOfWeek', () => {
       long: 'lundi'
     }
   });
+
+  expect(getDaysOfWeek('en', DayOfWeek.Wednesday)[0]).toEqual({
+    isoNumber: 3,
+    enumValue: 3,
+    name: {
+      narrow: 'W',
+      short: 'Wed',
+      long: 'Wednesday'
+    }
+  });
 });
