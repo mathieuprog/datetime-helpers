@@ -1,6 +1,6 @@
 {
   "name": "datetime-helpers",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Utility functions for working with dates and time",
   "funding": "https://github.com/mathieuprog/datetime-helpers?sponsor=1",
   "source": "src/index.ts",
