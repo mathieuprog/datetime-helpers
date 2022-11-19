@@ -1,11 +1,10 @@
 import { expect, test } from 'vitest';
-import { getDaysOfWeek } from '.';
+import { getLocalizedDayOfWeek, getLocalizedDaysOfWeek } from '.';
 import DayOfWeek from './DayOfWeek';
 
-test('getDaysOfWeek', () => {
-  expect(getDaysOfWeek('en', DayOfWeek.Wednesday)[0]).toEqual({
+test('getLocalizedDaysOfWeek', () => {
+  expect(getLocalizedDaysOfWeek('en', DayOfWeek.Wednesday)[0]).toEqual({
     isoNumber: 3,
-    enumValue: DayOfWeek.Wednesday,
     name: {
       narrow: 'W',
       short: 'Wed',
@@ -13,9 +12,8 @@ test('getDaysOfWeek', () => {
     }
   });
 
-  expect(getDaysOfWeek('en')[6]).toEqual({
+  expect(getLocalizedDaysOfWeek('en')[6]).toEqual({
     isoNumber: 7,
-    enumValue: DayOfWeek.Sunday,
     name: {
       narrow: 'S',
       short: 'Sun',
@@ -23,9 +21,8 @@ test('getDaysOfWeek', () => {
     }
   });
 
-  expect(getDaysOfWeek('fr')[0]).toEqual({
+  expect(getLocalizedDaysOfWeek('fr')[0]).toEqual({
     isoNumber: 1,
-    enumValue: DayOfWeek.Monday,
     name: {
       narrow: 'L',
       short: 'lun.',
@@ -33,9 +30,19 @@ test('getDaysOfWeek', () => {
     }
   });
 
-  expect(getDaysOfWeek('en', DayOfWeek.Wednesday)[0]).toEqual({
+  expect(getLocalizedDaysOfWeek('en', DayOfWeek.Wednesday)[0]).toEqual({
     isoNumber: 3,
-    enumValue: 3,
+    name: {
+      narrow: 'W',
+      short: 'Wed',
+      long: 'Wednesday'
+    }
+  });
+});
+
+test('getLocalizedDayOfWeek', () => {
+  expect(getLocalizedDayOfWeek('en', DayOfWeek.Wednesday)).toEqual({
+    isoNumber: 3,
     name: {
       narrow: 'W',
       short: 'Wed',

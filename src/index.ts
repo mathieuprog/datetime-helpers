@@ -1,5 +1,5 @@
-import { getDaysOfWeek } from './day-of-week';
+import { getLocalizedDaysOfWeek } from './day-of-week';
 
 export {
-  getDaysOfWeek
+  getLocalizedDaysOfWeek
 }

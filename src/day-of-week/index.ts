@@ -2,7 +2,6 @@ import DayOfWeek from './DayOfWeek';
 
 interface LocalizedDayOfWeek {
   isoNumber: number;
-  enumValue: DayOfWeek;
   name: {
     narrow: string;
     short: string;
@@ -30,7 +29,7 @@ const isoNumberEnumValueMap: Record<number, DayOfWeek> = {
   7: DayOfWeek.Sunday
 };
 
-export function getDaysOfWeek(languageTag: string, first: DayOfWeek | number = DayOfWeek.Monday): LocalizedDayOfWeek[] {
+export function getLocalizedDaysOfWeek(languageTag: string, first: DayOfWeek | number = DayOfWeek.Monday): LocalizedDayOfWeek[] {
   const date = enumValueDateMap[first];
 
   return [...Array(7)].map(() => {
@@ -38,7 +37,6 @@ export function getDaysOfWeek(languageTag: string, first: DayOfWeek | number = D
 
     const result = {
       isoNumber,
-      enumValue: isoNumberEnumValueMap[isoNumber],
       name: {
         narrow: new Intl.DateTimeFormat(languageTag, { weekday: 'narrow' }).format(date),
         short: new Intl.DateTimeFormat(languageTag, { weekday: 'short' }).format(date),
@@ -50,4 +48,19 @@ export function getDaysOfWeek(languageTag: string, first: DayOfWeek | number = D
 
     return result;
   });
+}
+
+export function getLocalizedDayOfWeek(languageTag: string, dayOfWeek: DayOfWeek | number): LocalizedDayOfWeek {
+  const date = enumValueDateMap[dayOfWeek];
+
+  const isoNumber = date.getUTCDay() || 7;
+
+  return {
+    isoNumber,
+    name: {
+      narrow: new Intl.DateTimeFormat(languageTag, { weekday: 'narrow' }).format(date),
+      short: new Intl.DateTimeFormat(languageTag, { weekday: 'short' }).format(date),
+      long: new Intl.DateTimeFormat(languageTag, { weekday: 'long' }).format(date)
+    }
+  };
 }
