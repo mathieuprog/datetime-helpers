@@ -49,4 +49,13 @@ test('getLocalizedDayOfWeek', () => {
       long: 'Wednesday'
     }
   });
+
+  expect(getLocalizedDayOfWeek('en', 3)).toEqual({
+    isoNumber: 3,
+    name: {
+      narrow: 'W',
+      short: 'Wed',
+      long: 'Wednesday'
+    }
+  });
 });
