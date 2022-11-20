@@ -31,10 +31,24 @@ getLocalizedDayOfWeek('en')
 import { DayOfWeek, getLocalizedDaysOfWeek } from 'datetime-helpers';
 
 getLocalizedDaysOfWeek('en-UK')
-// returns a list of the 7 days of week
+// returns a list of the 7 days of week, starting from Monday
 
 getLocalizedDaysOfWeek('en-UK', DayOfWeek.Sunday)
 // returns a list of the 7 days of week, starting from Wednesday
+```
+
+## Month helpers
+
+### `getMonthGrid`
+
+```typescript
+import { DayOfWeek, getMonthGrid } from 'datetime-helpers';
+
+getMonthGrid(Temporal.PlainYearMonth.from({ year: 2022, month: 10 }))
+// returns the month grid for October 2022, with weeks starting on Monday
+
+getMonthGrid(Temporal.PlainYearMonth.from({ year: 2022, month: 10 }), DayOfWeek.Sunday)
+// returns the month grid for October 2022, with weeks starting on Sunday
 ```
 
 ## Install
