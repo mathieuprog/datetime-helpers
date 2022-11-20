@@ -23,6 +23,7 @@
     "vitest": "^0.25.2"
   },
   "dependencies": {
+    "@js-temporal/polyfill": "^0.4.3"
   },
   "bugs": {
     "url": "https://github.com/mathieuprog/datetime-helpers/issues"
