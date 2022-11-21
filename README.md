@@ -9,7 +9,7 @@
 ```typescript
 import { getLocalizedDayOfWeek } from 'datetime-helpers';
 
-getLocalizedDayOfWeek('en')
+getLocalizedDayOfWeek('en', DayOfWeek.Wednesday)
 // returns the iso number and localized day of week name
 // for English language
 
@@ -34,7 +34,7 @@ getLocalizedDaysOfWeek('en-UK')
 // returns a list of the 7 days of week, starting from Monday
 
 getLocalizedDaysOfWeek('en-UK', DayOfWeek.Sunday)
-// returns a list of the 7 days of week, starting from Wednesday
+// returns a list of the 7 days of week, starting from Sunday
 ```
 
 ## Month helpers
