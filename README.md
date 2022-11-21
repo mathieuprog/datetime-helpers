@@ -10,8 +10,7 @@
 import { getLocalizedDayOfWeek } from 'datetime-helpers';
 
 getLocalizedDayOfWeek('en', DayOfWeek.Wednesday)
-// returns the iso number and localized day of week name
-// for English language
+// returns the localized day of week name for English language
 
 /*
 {
@@ -46,7 +45,7 @@ import { DayOfWeek, getMonthGrid } from 'datetime-helpers';
 
 getMonthGrid(Temporal.PlainYearMonth.from({ year: 2022, month: 10 }))
 // returns the month grid for October 2022, with weeks starting on Monday
-// the grid is a 2-dimensional array (6 rows x 7 days of week)
+// the grid is a 2-dimensional array (6 weeks x 7 days of week)
 
 getMonthGrid(Temporal.PlainYearMonth.from({ year: 2022, month: 10 }), DayOfWeek.Sunday)
 // returns the month grid for October 2022, with weeks starting on Sunday
