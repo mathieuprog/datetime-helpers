@@ -5,6 +5,7 @@ type Chronology = 'before' | 'during' | 'after';
 
 interface MontGridDay {
   date: Temporal.PlainDate;
+  dateIsoString: string;
   chronology: Chronology;
 }
 type MonthGridWeek = MontGridDay[];
@@ -17,15 +18,14 @@ export function getMonthGrid(yearMonth: Temporal.PlainYearMonth, firstDayOfWeek:
   for (let i = 0; i < 6; ++i) {
     const week: MonthGridWeek = [];
     for (let j = 0; j < 7; ++j) {
+      const cmp = Temporal.PlainYearMonth.compare(date.toPlainYearMonth(), yearMonth);
+
       week.push({
         date,
-        chronology:
-          (Temporal.PlainYearMonth.compare(date.toPlainYearMonth(), yearMonth) === 0
-            ? 'during'
-            : (Temporal.PlainYearMonth.compare(date.toPlainYearMonth(), yearMonth) === 1
-                ? 'after'
-                : 'before'))
+        dateIsoString: date.toString(),
+        chronology: (cmp === 0 ? 'during' : (cmp === 1 ? 'after' : 'before'))
       });
+
       date = date.add({ days: 1 });
     }
 
