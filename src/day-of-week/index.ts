@@ -10,13 +10,13 @@ interface LocalizedDayOfWeek {
 };
 
 const enumValueDateMap: Record<number, Date> = {
-  [DayOfWeek.Monday]: new Date(Date.UTC(2000, 0, 3)),
-  [DayOfWeek.Tuesday]: new Date(Date.UTC(2000, 0, 4)),
-  [DayOfWeek.Wednesday]: new Date(Date.UTC(2000, 0, 5)),
-  [DayOfWeek.Thursday]: new Date(Date.UTC(2000, 0, 6)),
-  [DayOfWeek.Friday]: new Date(Date.UTC(2000, 0, 7)),
-  [DayOfWeek.Saturday]: new Date(Date.UTC(2000, 0, 8)),
-  [DayOfWeek.Sunday]: new Date(Date.UTC(2000, 0, 9))
+  [DayOfWeek.Monday]: new Date(2000, 0, 3),
+  [DayOfWeek.Tuesday]: new Date(2000, 0, 4),
+  [DayOfWeek.Wednesday]: new Date(2000, 0, 5),
+  [DayOfWeek.Thursday]: new Date(2000, 0, 6),
+  [DayOfWeek.Friday]: new Date(2000, 0, 7),
+  [DayOfWeek.Saturday]: new Date(2000, 0, 8),
+  [DayOfWeek.Sunday]: new Date(2000, 0, 9)
 };
 
 const isoNumberEnumValueMap: Record<number, DayOfWeek> = {
