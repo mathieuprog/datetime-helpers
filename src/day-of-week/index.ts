@@ -35,7 +35,7 @@ export function getLocalizedDaysOfWeek(languageTag: string, first: DayOfWeek | n
   const date = enumValueDateMap[first];
 
   return [...Array(7)].map(() => {
-    const isoNumber = date.getUTCDay() || 7;
+    const isoNumber = date.getDay() || 7;
 
     const result = {
       isoNumber,
@@ -55,7 +55,7 @@ export function getLocalizedDaysOfWeek(languageTag: string, first: DayOfWeek | n
 export function getLocalizedDayOfWeek(languageTag: string, dayOfWeek: DayOfWeek | number): LocalizedDayOfWeek {
   const date = enumValueDateMap[dayOfWeek];
 
-  const isoNumber = date.getUTCDay() || 7;
+  const isoNumber = date.getDay() || 7;
 
   return {
     isoNumber,
