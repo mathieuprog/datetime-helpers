@@ -29,6 +29,8 @@ const isoNumberEnumValueMap: Record<number, DayOfWeek> = {
   7: DayOfWeek.Sunday
 };
 
+export { DayOfWeek };
+
 export function getLocalizedDaysOfWeek(languageTag: string, first: DayOfWeek | number = DayOfWeek.Monday): LocalizedDayOfWeek[] {
   const date = enumValueDateMap[first];
 

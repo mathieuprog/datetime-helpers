@@ -1,4 +1,5 @@
 import {
+  DayOfWeek,
   getLocalizedDayOfWeek,
   getLocalizedDaysOfWeek
 } from './day-of-week';
@@ -8,6 +9,7 @@ import {
 } from './month';
 
 export {
+  DayOfWeek,
   getLocalizedDayOfWeek,
   getLocalizedDaysOfWeek,
   getMonthGrid
